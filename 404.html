@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting... | Five A Day</title>
+    <script>
+      // Single Page Apps for GitHub Pages
+      // This script takes the current URL and converts the path and query
+      // parameters into a redirect URL, then redirects to that URL.
+      
+      // Using custom domain so we don't need path segments to keep
+      var pathSegmentsToKeep = 0;
+
+      var l = window.location;
+      var pathName = l.pathname.replace(/^\//, '');
+      
+      // Don't redirect 404.html itself
+      if (pathName === '404.html') {
+        console.log('On 404.html page, not redirecting');
+      } else {
+        var cleanedPathName = pathName
+          .split('/')
+          .slice(pathSegmentsToKeep)
+          .join('/');
+        
+        var redirectUrl = l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+          '/?/' + cleanedPathName + 
+          (l.search ? '&' + l.search.slice(1) : '') +
+          l.hash;
+          
+        console.log('Redirecting to:', redirectUrl);
+        l.replace(redirectUrl);
+      }
+    </script>
+    <style>
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(to bottom, #121936, #0A0E1A);
+        color: white;
+        text-align: center;
+        overflow: hidden;
+      }
+      
+      .container {
+        background-color: rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        padding: 40px;
+        max-width: 90%;
+        width: 400px;
+        position: relative;
+        z-index: 1;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+      
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        background: linear-gradient(to right, #64b5f6, #8c9eff);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      
+      p {
+        margin-bottom: 1.5rem;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 1.1rem;
+      }
+      
+      .link {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        background-color: rgba(140, 158, 255, 0.2);
+        color: white;
+        text-decoration: none;
+        border-radius: 9999px;
+        border: 1px solid rgba(140, 158, 255, 0.5);
+        backdrop-filter: blur(4px);
+        transition: all 0.3s ease;
+        font-weight: 500;
+      }
+      
+      .link:hover {
+        background-color: rgba(140, 158, 255, 0.3);
+      }
+      
+      .star {
+        position: absolute;
+        background-color: white;
+        border-radius: 50%;
+        box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4);
+        animation: twinkle 3s infinite ease-in-out;
+      }
+      
+      @keyframes twinkle {
+        0%, 100% { opacity: 0.6; transform: scale(0.9); }
+        50% { opacity: 1; transform: scale(1.1); }
+      }
+      
+      .glow {
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        background-color: rgba(140, 158, 255, 0.2);
+        border-radius: 50%;
+        filter: blur(40px);
+        z-index: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Create some stars programmatically -->
+    <script>
+      // Generate stars
+      function createStars() {
+        const starsCount = 40;
+        for (let i = 0; i < starsCount; i++) {
+          const star = document.createElement('div');
+          star.className = 'star';
+          
+          const size = Math.random() * 2 + 1;
+          const top = Math.random() * 100;
+          const left = Math.random() * 100;
+          const delay = Math.random() * 5;
+          
+          star.style.width = `${size}px`;
+          star.style.height = `${size}px`;
+          star.style.top = `${top}%`;
+          star.style.left = `${left}%`;
+          star.style.animationDelay = `${delay}s`;
+          
+          document.body.appendChild(star);
+        }
+        
+        // Add glow effect
+        const glow = document.createElement('div');
+        glow.className = 'glow';
+        document.body.appendChild(glow);
+      }
+      
+      // Call the function when the page loads
+      window.onload = createStars;
+    </script>
+    
+    <div class="container">
+      <h1>Redirecting...</h1>
+      <p>We're navigating through the cosmic space to find your destination</p>
+      <a href="javascript:window.location.href=window.location.origin;" class="link">Return to Home</a>
+    </div>
+  </body>
+</html> 
