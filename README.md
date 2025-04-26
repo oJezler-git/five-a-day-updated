@@ -28,23 +28,18 @@
 
 ## Technologies Used
 
-- React
-- TypeScript
-- Tailwind CSS
-- date-fns for date manipulation
-- PDF.js for PDF rendering
-- Local Storage for data persistence
+- `React`
+- `TypeScript`
+- `Tailwind CSS` for styling
+- `date-fns` for date manipulation
+- `PDF.js` for PDF rendering
+- `Local Storage` for data persistence
 
 ## License
 
 © oJezler. All rights reserved.
 
-
 ## Disclaimer
-
-Of course! Here’s a simple website disclaimer you could use:
-
-**Disclaimer**
 
 This website is **not affiliated, associated, authorised, endorsed by, or in any way officially connected** with Corbettmaths, or any of its subsidiaries or affiliates.  
 The official Corbettmaths website can be found at [www.corbettmaths.com](https://www.corbettmaths.com).
