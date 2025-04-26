@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script>
+      // Single Page Apps for GitHub Pages
+      // This script takes the current URL and converts the path and query
+      // parameters into a redirect URL, then redirects to that URL.
+      
+      // If you're creating a project page and the project name is in the path:
+      // https://username.github.io/repo-name
+      // Then add a path segment:
+      var pathSegmentsToKeep = 1;
+
+      var l = window.location;
+      var pathName = l.pathname.replace(/^\//, '');
+      
+      // If the path is pointing to a specific file that exists (like /404.html), 
+      // don't do the redirect
+      if (pathName === '404.html') {
+        console.log('On 404.html page, not redirecting');
+        return;
+      }
+      
+      var cleanedPathName = pathName
+        .split('/')
+        .slice(pathSegmentsToKeep)
+        .join('/');
+      
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+        cleanedPathName + (l.search ? '&' + l.search.slice(1) : '') +
+        l.hash
+      );
+    </script>
+  </head>
+  <body>
+    <h1>Redirecting...</h1>
+    <p>If you are not redirected automatically, <a href="/five-a-day-updated/">click here</a>.</p>
+  </body>
+</html> 
